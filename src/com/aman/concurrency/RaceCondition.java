@@ -47,7 +47,7 @@ class BankAccount implements Runnable{
         }
     }
 
-    private void makeWithDrawal(int amount) {
+    private  synchronized void makeWithDrawal(int amount) {//Lock applied to makeWithdrawal method
         if(balance>amount){
             System.out.println(Thread.currentThread().getName() + " is about to withdraw " + amount);
             balance-=amount;
