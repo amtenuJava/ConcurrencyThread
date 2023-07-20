@@ -18,7 +18,7 @@ public class ThreadPriority {
         thread2.start();
 
         try {
-            thread2.join();// suspend main until thread2 is completed, terminated or dies
+            thread2.join(10);// suspend main until thread2 is completed, terminated or dies
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
