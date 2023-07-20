@@ -31,7 +31,9 @@ class BankAccount implements Runnable{
         this.balance = balance;
     }
 
-    public int getBalance() {
+    public synchronized int getBalance() { //BY adding Syncronized here , Dani get to see the latest balance
+                                 //This block might be not synchro nized and can display undesirable result for dani as the balance
+                               // is shared between makewithdrawal and get balance
         return balance;
     }
 
