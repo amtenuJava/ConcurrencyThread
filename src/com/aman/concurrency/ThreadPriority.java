@@ -17,7 +17,15 @@ public class ThreadPriority {
         thread1.start();
         thread2.start();
 
+        try {
+            thread2.join();// suspend main until thread2 is completed, terminated or dies
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Thread main.........");
     }
+
 }
 
 class EmailInvitation implements Runnable{
